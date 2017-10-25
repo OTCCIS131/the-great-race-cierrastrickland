@@ -1,0 +1,32 @@
+#hotline{
+    position: absolute; 
+    bottom: 80vh; 
+    width:10vw; 
+    height:15vh; 
+    left: 10vh;
+}
+#logo{
+    position: absolute; 
+    bottom: 80vh; 
+    left: 80vh; 
+    height: 20vh; 
+    width: 40vh;
+}
+#buttercup{
+    position: absolute; 
+    bottom: 10vh; 
+    height: 20vh;
+    left: 0;
+}
+#blossom{
+    position: absolute; 
+    bottom: 35vh;
+    height: 20vh;
+    left: 0;
+}
+#morbucks{
+    position: absolute;
+    left: 83%;
+    height: 35vh; 
+    bottom: 15vh
+}
