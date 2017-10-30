@@ -10,13 +10,15 @@
     </head>
 
     <body background="./images/townsville.png";>
-        <div class="container-fluid" id="race">
-            <img src="./images/hotline.gif" id="hotline"> 
+        <div class="container-fluid" id="race" >
+            <img src="./images/hotline.gif" id="hotline" @click="startRace"> 
             <img src="./images/logo.png" id="logo">
-            <img src="./images/buttercup.png" id="buttercup">
-            <img src="./images/blossom.png" id="blossom">
+            <img src="./images/buttercup.png" id="buttercup" class="racer" :class="buttercupClass" :style="buttercupStyle">
+            <img src="./images/blossom.png" id="blossom" class="racer" :class="blossomClass" :style="blossomStyle">
             <img src="./images/morbucks.png" id="morbucks">
 
         </div>
+        <script>"//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"</script>
+        <script>"https://unpkg.com/vue@2.5.2/dist/vue.js"</script>
     </body>
 </html>

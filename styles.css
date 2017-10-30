@@ -16,17 +16,18 @@
     position: absolute; 
     bottom: 10vh; 
     height: 20vh;
-    left: 0;
+    left: 0vw;
 }
 #blossom{
     position: absolute; 
     bottom: 35vh;
     height: 20vh;
-    left: 0;
+    left: 0vw;
 }
 #morbucks{
     position: absolute;
     left: 83%;
     height: 35vh; 
-    bottom: 15vh
+    bottom: 10vh
+
 }
