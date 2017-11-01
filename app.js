@@ -1,63 +1,70 @@
-$(fucntion() {
-    let vm = new Vue({
-        el: '#race',
-        data: {
-            racing: false,
-            winner: null,
-            buttercup: 0,
-            blossom: 0,
-            tick: 0,
-            interval: null
+//Name:       Cierra Strickland
+//Assignment: The great race
+//Page:       Javascript / Vue
+let app = new Vue({
+    el: '#race',
+    data: {
+        racing: false,
+        winner: null,
+        blossom: 0,
+        buttercup: 0,
+        tick: 0,
+        interval: null,            
+    },
+    computed: {
+        winning() {
+            return this.blossom > this.buttercup ? this.blossom : this.buttercup
+        },            
+        blossomStyle() {
+            return {
+                left: `${this.blossom}vw`
+            }             
         },
-        computed: {
-            winning() {
-                if (this.buttercup == this.blossom) return null
-
-                return this.buttercup > this.blossom ? 'Buttercup' : 'Blossom'
-            },
-            buttercupStyle() {
-                return {
-                    left: `$(this.buttercup)vw`
-                }
-            },
-            buttercupClass() {
-                if(!this.buttercup)
-                return this.winner == 'Buttercup'
-            },
-            blossomStyle() {
-                return {
-                    left: '$(this.blossom)vw'
-                }
-            },
-            blossomClass() {
-                if(!this.blossom)
-                    return this.winner == 'Blossom'
+        buttercupStyle() {
+            return {
+                left: `${this.buttercup}vw`
             }
         },
+        // blossomClass(){
+        //     if(blossom.winner!=true){
+        //         this.buttercup = buttercup.winner
+        //     }
+        // },
+        // buttercupClass(){
+        //     if(buttercup.winner!=true){
+        //         this.blossom = blossom.winner
+        //     }
+        // }
+    },
+    methods: {
+        startRace() {
+            this.racing = true
+            this.interval = setInterval(() => {
+                this.progressPlayers()
+            }, 50);
+        },
+        progressPlayers() {
+            this.tick++
+            this.blossom += Math.random() > .5 ? 1 : 0   //"roll dice"
+            this.buttercup += Math.random() > .5 ? 1 : 0 //"roll dice"
+            this.checkWinnah()
+        },
+        checkWinnah(){
+            if (this.blossom == this.buttercup) return
 
-        methods: {
-            startRace() {
-
-            },
-            progressPlayer() {
-                this.tick++;
-                this.buttercup += (Math.random() > .5) ? 1 : 0
-                this.blossom += (Math.random() > .5) ? 1 : 0
+            if (this.blossom >= 85){
+                blossom.winner=true;
+                buttercup.winner=false;
+                this.winnahWinnah()
+            }
+            if (this.buttercup >= 85) {
+                blossom.winner=false;
+                buttercup.winner=true;
+                this.winnahWinnah()
             }
         },
-            checkVictory() {
-                if (this.buttercup == this.blossom) return null;
-                if (this.buttercup >= 90){
-                        this.callVictory
-                    }
-                if (this.blossom >= 90){
-                    this.callVictory
-                }
-            },
-            callVictory(){
-                this.winner
-                clearInterval(this.interval)
-            }
-
-    })
+        winnahWinnah(){
+            clearInterval(this.interval);
+        }
+    }
 })

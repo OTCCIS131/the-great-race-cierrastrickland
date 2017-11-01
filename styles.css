@@ -1,3 +1,10 @@
+/*Name:     Cierra Strickland
+Assignment: The great race
+Page:       Stylesheet */
+
+body{
+    background-image: url("./images/townsville.png")
+}
 #hotline{
     position: absolute; 
     bottom: 80vh; 
@@ -31,3 +38,12 @@
     bottom: 10vh
 
 }
+.racer {
+    transition: left .5s;
+}
+/* .winner{
+    bottom: 20vh;
+    left: 40vw !important;
+
+    transition: width 2s, height 4s;
+} */
